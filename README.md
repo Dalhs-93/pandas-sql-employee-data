@@ -7,7 +7,7 @@ Navigate to the root directory of the repo and run `uv sync`.
 
 Then navigate to the `scripts` directory and run `python sql_db.py`, this will create the database and populate it with the data from the csv file.
 
-Then you can run
+Then you can run:
 ```bash
 python data_quality_eval.py
 python data_gov_access_control.py
@@ -15,7 +15,7 @@ python data_cleaning.py
 python data_lineage_logging.py
 ```
 
-which creates a csv with the output data for each script.
+which creates a csv or log file with the output data for each script.
 
 
 ## Question 2
@@ -30,3 +30,16 @@ This approach would follow more closely to Identity and Access Management (IAM),
 
 This makes adhering to the principle of least privilege (PoLP) easier, as each role can be assigned a specific set of permissions, and the permissions can be easily modified for a specific role.
 
+# General notes
+
+I know that it's not strictly necessary to use classes for this task, but I wanted to show that I can use classes and OOP principles.
+
+I am mainly using Python for this task rather than SQL as many methods are in pandas and other libraries meaning less code to do the same job. Also there are other operations like data logging and writing to local files that would not be possible/recommended as SQL queries. However, my script does include one SELECT SQL query to extract data from an SQL database to show a realistic use case of how Python and pandas can be used to interact with SQL databases.
+
+I mainly use vectorised pandas operations for data manipulation as they are more efficient than looping.
+
+If I was doing logging in a real project I would send the custom logs to a cloud logging service like AWS CloudWatch.
+
+I am using uv for package management as it has detailed dependency resolution, is faster, has less commands, and is more automatic than pip.
+
+If you have any issues setting this up please let me know benldale93@gmail.com.

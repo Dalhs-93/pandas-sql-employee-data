@@ -44,11 +44,9 @@ class SqlDb:
         """
         Load a single table from the SQLite database into a pandas DataFrame.
 
-        Args:
-            table_name (str): The name of the table to load.
+        table_name (str): The name of the table to load.
 
-        Returns:
-            pd.DataFrame: The table as a pandas DataFrame.
+        returns pd.DataFrame: The table as a pandas DataFrame.
         """
         conn = sqlite3.connect(self.path_db)
         df = pd.read_sql(f"SELECT * FROM {table_name}", conn)
