@@ -1,0 +1,5 @@
+dataset_id,department,allowed_level
+77,finance,sensitive
+77,hr,restricted
+88,trading,confidential
+88,risk,sensitive
