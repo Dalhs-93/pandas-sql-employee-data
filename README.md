@@ -5,10 +5,10 @@ uv will manage the dependencies for you.
 
 Navigate to the root directory of the repo and run `uv sync`.
 
-Then navigate to the `scripts` directory and run `python sql_db.py`, this will create the database and populate it with the data from the csv file.
-
 Then you can run:
 ```bash
+cd scripts
+uv run python sql_db.py
 uv run python data_quality_eval.py
 uv run python data_gov_access_control.py
 uv run python data_cleaning.py
