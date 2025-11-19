@@ -38,7 +38,7 @@ class DataLineageLogger:
         message = (f"Step '{step_name}': rows {rows_before} -> {rows_after}, "
         f"cols {cols_before} -> {cols_after}, added_cols={added_cols}, removed_cols={removed_cols}")
 
-        logger.info(message)
+        self.logger.info(message)
         # Write log text to csv
         path_data_dir = Path(__file__).parent.parent / "data"
         path_script_output = path_data_dir / "script_output"

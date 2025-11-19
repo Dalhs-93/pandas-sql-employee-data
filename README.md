@@ -9,10 +9,10 @@ Then navigate to the `scripts` directory and run `python sql_db.py`, this will c
 
 Then you can run:
 ```bash
-python data_quality_eval.py
-python data_gov_access_control.py
-python data_cleaning.py
-python data_lineage_logging.py
+uv run python data_quality_eval.py
+uv run python data_gov_access_control.py
+uv run python data_cleaning.py
+uv run python data_lineage_logging.py
 ```
 
 which creates a csv or log file with the output data for each script.
