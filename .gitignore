@@ -10,3 +10,8 @@ wheels/
 .venv
 scripts/__pycache__
 .vscode/*
+.idea/*
+.pytest_cache
+.coverage
+tests/__pycache__
+tests/.coverage

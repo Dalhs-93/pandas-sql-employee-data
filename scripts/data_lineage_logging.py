@@ -1,9 +1,14 @@
 import logging
 import pandas as pd
-import data_cleaning
 from pathlib import Path
+from scripts import data_cleaning
 
 class DataLineageLogger:
+    # ANSI color codes
+    green = '\033[92m'
+    red = '\033[91m'
+    reset = '\033[0m'
+    
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.INFO)
@@ -35,15 +40,24 @@ class DataLineageLogger:
         added_cols = sorted(set(columns_after) - set(columns_before))
         removed_cols = sorted(set(columns_before) - set(columns_after))
 
-        message = (f"Step '{step_name}': rows {rows_before} -> {rows_after}, "
-        f"cols {cols_before} -> {cols_after}, added_cols={added_cols}, removed_cols={removed_cols}")
+        # Create colored output for stdout
+        added_cols_colored = f"{self.green}{added_cols}{self.reset}" if added_cols else "[]"
+        removed_cols_colored = f"{self.red}{removed_cols}{self.reset}" if removed_cols else "[]"
+        
+        colored_message = (f"Step '{step_name}': rows {rows_before} -> {rows_after}, "
+                          f"cols {cols_before} -> {cols_after}, "
+                          f"added_cols={added_cols_colored}, removed_cols={removed_cols_colored}")
+        
+        # Plain message for log file (no colors)
+        plain_message = (f"Step '{step_name}': rows {rows_before} -> {rows_after}, "
+                        f"cols {cols_before} -> {cols_after}, added_cols={added_cols}, removed_cols={removed_cols}")
 
-        self.logger.info(message)
-        # Write log text to csv
+        self.logger.info(colored_message)
+        # Write plain text (no colors) to log file
         path_data_dir = Path(__file__).parent.parent / "data"
         path_script_output = path_data_dir / "script_output"
         with open(path_script_output / "lineage_log.log", "a") as f:
-            f.write(message + "\n")
+            f.write(plain_message + "\n")
         return df_after
 
 

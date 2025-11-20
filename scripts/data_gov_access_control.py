@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-from sql_db import SqlDb
+from scripts.sql_db import SqlDb
 
 class DataGovAccessControl:
     def __init__(self):
