@@ -42,7 +42,7 @@ I mainly use vectorised pandas operations for data manipulation as they are more
 
 If I was doing logging in a real project I would send the custom logs to a cloud logging service like AWS CloudWatch.
 
-I am using uv for package management as it has detailed dependency resolution, is faster, and is more automatic than pip.
+I am using uv for package management as it has detailed dependency resolution, is faster, and less verbose than pip.
 
 Finally, I created a tests directory. Pytests can be run for the Python scripts by running `uv run pytest`, see the README.md in the tests dir for more details.
 
