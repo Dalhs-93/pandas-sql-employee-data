@@ -3,7 +3,37 @@
 To set up this repo you will need to have uv installed, you can install uv by running `pip install uv`.
 uv will manage the dependencies for you.
 
-Navigate to the root directory of the repo and run `uv sync`.
+Navigate to the root directory of the repo and run:
+```bash
+uv sync
+uv pip install -e .
+```
+
+### Troubleshooting: If `uv` is not recognized
+
+If you get a "command not found" or "not recognized" error after installing `uv`, you need to add it to your PATH:
+
+**Windows (PowerShell):**
+```powershell
+# Find where uv was installed
+python -m site --user-base
+
+# Add the Scripts directory to your PATH (replace <USER_BASE> with the path from above)
+setx PATH "$Env:PATH;<USER_BASE>\Scripts"
+
+# Restart your terminal for changes to take effect
+```
+
+**macOS/Linux:**
+```bash
+# Add to your shell profile (~/.zshrc for macOS, ~/.bashrc for Linux)
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+
+# Reload your shell configuration
+source ~/.zshrc
+```
+
+After updating your PATH, restart your terminal and try running `uv sync` again.
 
 Then you can run:
 ```bash
