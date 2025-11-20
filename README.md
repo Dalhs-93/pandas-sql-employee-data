@@ -13,12 +13,12 @@ If `uv` is not recognised then go to the Troubleshooting section below.
 
 Then you can run:
 ```bash
-cd scripts
-uv run python sql_db.py # This will create the database and populate it with the data from the csv file
-uv run python data_quality_eval.py # Q1 produces a csv file with the output data in data/script_output
-uv run python data_gov_access_control.py # Q2 produces a csv file with the output data in data/script_output
-uv run python data_cleaning.py # Q3 produces a csv file with the output data in data/script_output
-uv run python data_lineage_logging.py # Q4 produces a log file with the output data in data/script_output
+uv run python scripts/sql_db.py # This will create the database and populate it with the data from the csv file
+uv run python scripts/data_quality_eval.py # Q1 produces a csv file with the output data in data/script_output
+uv run python scripts/data_gov_access_control.py # Q2 produces a csv file with the output data in data/script_output
+uv run python scripts/data_cleaning.py # Q3 produces a csv file with the output data in data/script_output
+uv run python scripts/data_lineage_logging.py # Q4 produces a log file with the output data in data/script_output
+uv run pytest
 ```
 
 which creates a csv or log file with the output data for each script.
@@ -89,10 +89,10 @@ pip install -e ".[dev]"
 
 Then you can run the scripts without the `uv run` prefix:
 ```bash
-cd scripts
-python sql_db.py # This will create the database and populate it with the data from the csv file
-python data_quality_eval.py # Q1 produces a csv file with the output data in data/script_output
-python data_gov_access_control.py # Q2 produces a csv file with the output data in data/script_output
-python data_cleaning.py # Q3 produces a csv file with the output data in data/script_output
-python data_lineage_logging.py # Q4 produces a log file with the output data in data/script_output
+python scripts/sql_db.py # This will create the database and populate it with the data from the csv file
+python scripts/data_quality_eval.py # Q1 produces a csv file with the output data in data/script_output
+python scripts/data_gov_access_control.py # Q2 produces a csv file with the output data in data/script_output
+python scripts/data_cleaning.py # Q3 produces a csv file with the output data in data/script_output
+python scripts/data_lineage_logging.py # Q4 produces a log file with the output data in data/script_output
+python -m pytest
 ```
