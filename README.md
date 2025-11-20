@@ -7,7 +7,7 @@ Navigate to the root directory of the repo and run:
 ```bash
 uv sync
 uv pip install -e .
-uv pip install -e ".[dev]" # To setup pytest
+uv pip install -e ".[dev]"
 ```
 If `uv` is not recognised then go to the Troubleshooting section below.
 
@@ -84,7 +84,7 @@ Navigate to the root directory of the repo and run:
 ```bash
 pip install -r requirements.txt
 pip install -e .
-pip install -e ".[dev]" # To setup pytest
+pip install -e ".[dev]"
 ```
 
 Then you can run the scripts without the `uv run` prefix:
