@@ -5,8 +5,6 @@ uv will manage the dependencies for you.
 
 Navigate to the root directory of the repo and run `uv sync`.
 
-
-
 Then you can run:
 ```bash
 cd scripts
