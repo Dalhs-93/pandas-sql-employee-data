@@ -31,7 +31,7 @@ Finally, I created a tests directory. Pytests can be run for the Python scripts 
 
 If you have any issues setting this up please let me know benldale93@gmail.com.
 
-### Troubleshooting: If `uv` is not recognized
+### Troubleshooting: If `uv` is not recognised
 
 If you get a "command not found" or "not recognized" error after installing `uv`, you need to add it to your PATH:
 
