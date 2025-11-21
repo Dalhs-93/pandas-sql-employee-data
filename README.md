@@ -1,4 +1,4 @@
-# EDF Data Engineer Test
+# Setup
 
 To set up this repo you will need to have uv installed, you can install uv by running `pip install uv`.
 uv will manage the dependencies for you.
